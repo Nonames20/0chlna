@@ -1,0 +1,22 @@
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Callback</title>
+</head>
+<body>
+    <h1>OAuth2 Callback</h1>
+    <p id="content"></p>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const code = params.get('code');
+        if (code) {
+            document.getElementById('content').textContent = `Authorization Code: ${code}`;
+        } else {
+            document.getElementById('content').textContent = 'No authorization code found.';
+        }
+    </script>
+</body>
+</html>
